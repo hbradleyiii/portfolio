@@ -6,4 +6,5 @@ Portfolio - haroldbradleyiii.com
 Visit http://haroldbradleyiii.com to view this website.
 
 ----
+
 *Soli Deo gloria*
