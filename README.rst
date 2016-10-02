@@ -1,5 +1,5 @@
-Portfolio - haroldbradleyiii.com
-################################
+Personal Portfolio
+##################
 
 *This is the source code for my 2016 personal portfolio website.*
 
