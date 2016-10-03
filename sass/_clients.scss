@@ -44,7 +44,7 @@
         li:nth-of-type(3) { opacity: 1; } // Explictly show the 3rd item
         li:nth-of-type(n+4) { opacity: 0; } // Hide the fourth item and beyond
         &.animate li {
-            left: -33.3%;
+            left: -33.33%;
             &:nth-of-type(4) { opacity: 1; } // Fade the fourth one in
         }
         &:before, &:after { width: 40px; }
@@ -70,7 +70,7 @@
         li:nth-of-type(5) { opacity: 1; } // Explictly show the 5rd item
         li:nth-of-type(n+6) { opacity: 0; } // Hide the sixth item and beyond
         &.animate li {
-            left: -25%;
+            left: -20%;
             &:nth-of-type(6) { opacity: 1; } // Fade the sixth one in
         }
         &:before, &:after { width: 100px; }
