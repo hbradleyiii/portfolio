@@ -1,0 +1,84 @@
+body > header {
+    @include prefix(box-shadow, "0 0 5px 3px rgba(0, 0, 0, 0)");
+    @include transition(all .5s ease-in-out);
+    @include size(100%, 60px);
+    background-color: transparent;
+    padding: 10px 20px;
+    position: fixed;
+    z-index: 100;
+    &.sticky {
+        @include prefix(box-shadow, "0 0 5px 3px rgba(0, 0, 0, 0.3)");
+        background-color: $black_3;
+    }
+    .signature { @include font-size(2); }
+    @media (max-width: $width_desktop - 1px) {
+        @include prefix(box-shadow, "0 0 5px 3px rgba(0, 0, 0, 0.3)");
+        background-color: $black_3;
+        .main-nav {
+            @include absolute(top 100% right -240px);
+            @include transition(all .5s ease-in-out);
+            padding: 10px;
+            background-color: $black_2;
+            a {
+                display: block;
+                padding: 10px 20px;
+                text-align: center;
+                width: 200px;
+                &:before { content: none; } // Remove separating bars
+            }
+        }
+    }
+    a, a:hover { color: $white; }
+    input#menu-toggle { @extend %hide; }
+    label[for='menu-toggle'] {
+        @include hamburger(50px, 30px, $white);
+        float: right;
+        font-size: 0;
+        margin-top: 5px
+    }
+    input#menu-toggle:checked ~ .main-nav { right: 0; }
+    @media (min-width: $width_desktop) {
+        padding: 10px 200px;
+        &.sticky {
+            @include prefix(box-shadow, "0 0 5px 3px rgba(0, 0, 0, 0.3)");
+            background-color: $black_3;
+            height: 70px;
+            padding: 15px 200px;
+        }
+        .signature { @include font-size(3); }
+        label[for='menu-toggle'] { display: none; }
+
+    }
+}
+
+body > .title {
+    background: url("../images/hero.jpg") no-repeat;
+    background-position: center bottom;
+    background-size: cover;
+    height: 400px;
+    padding: 10px 20px;
+    position: relative;
+    text-align: center;
+    h1 {
+        @include absolute(top 50% left 50%);
+        @include font-size(3);
+        clear: both;
+        color: $white;
+        font-weight: $font_light;
+        line-height: 1;
+        padding: 10px 20px;
+        max-width: 900px;
+        width: 100%;
+        transform: translate(-50%, -50%);
+    }
+    @media (min-width: $width_tablet) {
+        height: 600px;
+        padding: 10px 100px;
+        h1 { @include font-size(4); }
+    }
+    @media (min-width: $width_desktop) {
+        height: 800px;
+        padding: 10px 200px;
+        h1 { @include font-size(5); }
+    }
+}
