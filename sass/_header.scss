@@ -17,14 +17,13 @@ body > header {
         .main-nav {
             @include absolute(top 100% right -240px);
             @include transition(all .5s ease-in-out);
-            padding: 10px;
             background-color: $black_2;
+            padding: 10px;
             a {
                 display: block;
                 padding: 10px 20px;
                 text-align: center;
                 width: 200px;
-                &:before { content: none; } // Remove separating bars
             }
         }
     }
