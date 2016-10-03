@@ -1,0 +1,91 @@
+///////////////
+// Clients
+.clients {
+    font-size: 0; // Prevents spacing issues and jerky animation
+    padding: 30px 20px;
+    position: relative;
+    white-space: nowrap;
+    li {
+        @include relative(left 0);
+        display: inline-block;
+        list-style: none;
+        opacity: 1;
+        text-align: center;
+        vertical-align: middle;
+        width: 50%; // Default to 2 in a row
+        img { height: auto; max-height: 70px; max-width: 90%; }
+        &:nth-of-type(n+3) { opacity: 0; } // Hide the third one and beyond
+    }
+    &.animate li {
+        @include transition(all 1s ease-in-out, opacity .7s ease-in);
+        left: -50%; // Slide to the left
+        &:nth-of-type(1) { opacity: 0; } // Fade the first one out
+        &:nth-of-type(3) { opacity: 1; } // Fade the third one in
+    }
+    // White wash gradients:
+    &:before, &:after { @include absolute(top 0 bottom 0); background: $white; content: ''; width: 20px; z-index: 10; }
+    &:before {
+        background: -moz-linear-gradient(left, $white 40%, transparent 100%);
+        background: -webkit-linear-gradient(left, $white 40%, transparent 100%);
+        background: linear-gradient(to right, $white 40%, transparent 100%);
+        left: 0;
+    }
+    &:after {
+        background: -moz-linear-gradient(left, transparent 0%, $white 40%);
+        background: -webkit-linear-gradient(left, transparent 0%, $white 40%);
+        background: linear-gradient(to right, transparent 0%, $white 40%);
+        right: 0;
+    }
+
+    // 3 in a Row
+    @media (min-width: 500px) {
+        padding: 40px;
+        li { width: 33.33%; }
+        li:nth-of-type(3) { opacity: 1; } // Explictly show the 3rd item
+        li:nth-of-type(n+4) { opacity: 0; } // Hide the fourth item and beyond
+        &.animate li {
+            left: -33.3%;
+            &:nth-of-type(4) { opacity: 1; } // Fade the fourth one in
+        }
+        &:before, &:after { width: 40px; }
+    }
+
+    // 4 in a Row
+    @media (min-width: $width_tablet) {
+        padding: 40px 60px;
+        li { width: 25%; }
+        li:nth-of-type(4) { opacity: 1; } // Explictly show the 4rd item
+        li:nth-of-type(n+5) { opacity: 0; } // Hide the fifth item and beyond
+        &.animate li {
+            left: -25%;
+            &:nth-of-type(5) { opacity: 1; } // Fade the fifth one in
+        }
+        &:before, &:after { width: 60px; }
+    }
+
+    // 5 in a row
+    @media (min-width: $width_desktop) {
+        padding: 40px 100px;
+        li { width: 20%; }
+        li:nth-of-type(5) { opacity: 1; } // Explictly show the 5rd item
+        li:nth-of-type(n+6) { opacity: 0; } // Hide the sixth item and beyond
+        &.animate li {
+            left: -25%;
+            &:nth-of-type(6) { opacity: 1; } // Fade the sixth one in
+        }
+        &:before, &:after { width: 100px; }
+    }
+
+    // 6 in a row
+    @media (min-width: $width_desktop + 200px) {
+        padding: 40px 80px;
+        li { width: 16.66%; }
+        li:nth-of-type(6) { opacity: 1; } // Explictly show the 6rd item
+        li:nth-of-type(n+7) { opacity: 0; } // Hide the seventh item and beyond
+        &.animate li {
+            left: -16.66%;
+            &:nth-of-type(7) { opacity: 1; } // Fade the seventh one in
+        }
+        &:before, &:after { width: 80px; }
+    }
+}
