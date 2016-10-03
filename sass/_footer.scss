@@ -1,0 +1,80 @@
+body > footer {
+    background-color: $black_3;
+    border-top: 1px solid $black;
+    padding-top: 20px;
+    text-align: center;
+    text-shadow: 0px 0px 2px $black;
+    @media (min-width: $width_desktop) {
+        padding: 20px 8% 0;
+    }
+    &, a, a:hover { color: $white; }
+    section {
+        @include font-size(2);
+        display: inline-block;
+        float: left;
+        padding: 0 20px 20px 40px;
+        text-align: left;
+        vertical-align: top;
+        width: 100%;
+        h2, a { padding-left: 20px; }
+        @media (min-width: $width_tablet) {
+            width: 50%;
+            &:nth-of-type(2n+1) { clear: both; }
+            h2, a { padding-left: 60px; }
+        }
+        @media (min-width: $width_desktop) {
+            padding: 0 10px 20px 0;
+            width: 25%;
+            &:nth-of-type(2n+1) { clear: none; }
+            &:nth-of-type(4n+1) { clear: both; }
+            h2, a { padding-left: 35px; }
+        }
+        h2 { @include font-size(3); text-transform: lowercase; }
+        a {
+            display: block;
+            font-weight: 400;
+            text-transform: lowercase;
+        }
+        &.work a { color: $green; }
+        &.skills a { color: $orange; }
+        &.social a { color: $blue; }
+        &.vita a { color: $yellow; }
+        &.social {
+            a {
+                position: relative;
+                &:before {
+                    @include absolute(top 50% left -15px);
+                    @include transform(translateY(-50%));
+                    @include size(25px);
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    content: '';
+                    @media (min-width: $width_tablet) { left: 0; }
+                }
+                &.email:before { background-image: url('../images/ico-email.png'); }
+                &.facebook:before { background-image: url('../images/ico-facebook.png'); }
+                &.github:before { background-image: url('../images/ico-github.png'); }
+                &.google-plus:before { background-image: url('../images/ico-google-plus.png'); }
+                &.linkedin:before { background-image: url('../images/ico-linkedin.png'); }
+            }
+        }
+    }
+    .footer-nav {
+        border-bottom: 1px solid $white;
+        clear: both;
+        margin: 0 auto;
+        padding: 30px 0;
+        width: 66%;
+        @media (max-width: 650px) {
+            a {
+                padding: 10px 20px;
+            }
+        }
+    }
+    .copyright {
+        @include font-size(-1);
+        clear: both;
+        display: block;
+        padding: 20px 0;
+    }
+}
