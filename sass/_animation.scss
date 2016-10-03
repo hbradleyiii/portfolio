@@ -1,0 +1,23 @@
+/////////
+// Fadein
+@keyframe fadein { from { opacity: 0; } to   { opacity: 1; } }
+@-moz-keyframes fadein { from { opacity: 0; } to   { opacity: 1; } }
+@-webkit-keyframes fadein { from { opacity: 0; } to   { opacity: 1; } }
+@-ms-keyframes fadein { from { opacity: 0; } to   { opacity: 1; } }
+@-o-keyframes fadein { from { opacity: 0; } to   { opacity: 1; } }
+
+/////////////
+// Slide down
+@keyframe slidedown { from { transform: translateY(-20px); } to { transform: translateY(0); } }
+@-moz-keyframes slidedown { from { transform: translateY(-20px); } to { transform: translateY(0); } }
+@-webkit-keyframes slidedown { from { transform: translateY(-20px); } to { transform: translateY(0); } }
+@-ms-keyframes slidedown { from { transform: translateY(-20px); } to { transform: translateY(0); } }
+@-o-keyframes slidedown { from { transform: translateY(-20px); } to { transform: translateY(0); } }
+
+/////////////
+// Slide left
+@keyframe slideleft { from { transform: translateX(100%); } to { transform: translateX(0); } }
+@-moz-keyframes slideleft { from { transform: translateX(100%); } to { transform: translateX(0); } }
+@-webkit-keyframes slideleft { from { transform: translateX(100%); } to { transform: translateX(0); } }
+@-ms-keyframes slideleft { from { transform: translateX(100%); } to { transform: translateX(0); } }
+@-o-keyframes slideleft { from { transform: translateX(100%); } to { transform: translateX(0); } }
