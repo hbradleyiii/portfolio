@@ -16,12 +16,6 @@ class Articles extends Migration
         Schema::create('articles', function (Blueprint $table) {
             $table->increments('id');
             $table->string('slug')->unique();
-            $table->integer('author_id')
-                  ->unsigned()
-                  ->default(0);
-            $table->foreign('author_id')
-                  ->references('id')->on('users')
-                  ->delete('cascade');
             $table->string('title')->unique();
             $table->text('body');
             $table->boolean('published');
