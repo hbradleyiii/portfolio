@@ -11,26 +11,52 @@
 |
 */
 
+// Home Page
+
 Route::get('/',
             ['as'   => 'home',
              'uses' => 'HomeController@index']);
 
-Route::get('articles',
-            ['as'   => 'articles',
-             'uses' => 'ProjectController@index']);
 
-Route::get('article/{project_name}',
-            ['as'   => 'article',
-             'uses' => 'ProjectController@show']);
+// General Resources
 
-Route::get('page/{project_name}',
-            ['as'   => 'page',
-             'uses' => 'ProjectController@show']);
+Route::resource('articles', 'ArticleController');
+Route::resource('projects', 'ProjectController');
+Route::resource('skill', 'SkillController');
 
-Route::get('projects',
-            ['as'   => 'projects',
-             'uses' => 'ProjectController@index']);
 
-Route::get('project/{project_name}',
-            ['as'   => 'project',
-             'uses' => 'ProjectController@show']);
+// Contact Page
+
+Route::get('contact',
+            ['as'   => 'contact',
+             'uses' => 'ContactController@show']);
+
+
+// Generic Pages
+
+Route::get('{page}',
+            ['as'   => 'page.show',
+             'uses' => 'PageController@show']);
+
+Route::get('page/create',
+            ['as'   => 'page.create',
+             'uses' => 'PageController@create']);
+
+Route::post('page',
+            ['as'   => 'page.store',
+             'uses' => 'PageController@store']);
+
+Route::get('page/{page}/edit',
+            ['as'   => 'page.edit',
+             'uses' => 'PageController@edit']);
+
+Route::put('page/{page}',
+            ['as'   => 'page.update',
+             'uses' => 'PageController@update']);
+
+Route::patch('page/{page}',
+            ['uses' => 'PageController@update']);
+
+Route::delete('page/{page}',
+            ['as'   => 'page.destroy',
+             'uses' => 'PageController@update']);
