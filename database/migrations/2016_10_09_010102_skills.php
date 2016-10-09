@@ -17,7 +17,7 @@ class Skills extends Migration
             $table->increments('id');
             $table->string('name')->unique();
             $table->text('description');
-            $table->boolean('published');
+            $table->boolean('published')->default(false);
             $table->timestamps();
         });
     }

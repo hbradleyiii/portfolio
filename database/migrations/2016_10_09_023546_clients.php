@@ -17,7 +17,7 @@ class Clients extends Migration
             $table->increments('id');
             $table->string('name')->unique();
             $table->string('logo_url');
-            $table->boolean('published');
+            $table->boolean('published')->default(false);
             $table->timestamps();
         });
     }

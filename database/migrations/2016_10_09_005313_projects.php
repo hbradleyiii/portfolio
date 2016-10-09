@@ -18,7 +18,7 @@ class Projects extends Migration
             $table->string('name')->unique();
             $table->string('timeframe');
             $table->text('description');
-            $table->boolean('published');
+            $table->boolean('published')->default(false);
             $table->timestamps();
         });
     }

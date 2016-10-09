@@ -18,7 +18,7 @@ class Articles extends Migration
             $table->string('slug')->unique();
             $table->string('title')->unique();
             $table->text('body');
-            $table->boolean('published');
+            $table->boolean('published')->default(false);
             $table->date('published_at');
             $table->timestamps();
         });

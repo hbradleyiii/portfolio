@@ -18,7 +18,7 @@ class Pages extends Migration
             $table->string('slug')->unique();
             $table->string('title')->unique();
             $table->text('body');
-            $table->boolean('published');
+            $table->boolean('published')->default(false);
             $table->timestamps();
         });
     }
