@@ -34,9 +34,9 @@ Route::get('contact',
 
 // Generic Pages
 
+Route::resource('pages', 'PageController', [
+                'except' => [ 'show' ] ]);
+
 Route::get('{page}',
             ['as'   => 'page',
              'uses' => 'PageController@show']);
-
-Route::resource('pages', 'PageController', [
-                'except' => [ 'show' ] ]);
