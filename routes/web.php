@@ -11,6 +11,26 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',
+            ['as'   => 'home',
+             'uses' => 'HomeController@index']);
+
+Route::get('articles',
+            ['as'   => 'articles',
+             'uses' => 'ProjectController@index']);
+
+Route::get('article/{project_name}',
+            ['as'   => 'article',
+             'uses' => 'ProjectController@show']);
+
+Route::get('page/{project_name}',
+            ['as'   => 'page',
+             'uses' => 'ProjectController@show']);
+
+Route::get('projects',
+            ['as'   => 'projects',
+             'uses' => 'ProjectController@index']);
+
+Route::get('project/{project_name}',
+            ['as'   => 'project',
+             'uses' => 'ProjectController@show']);
