@@ -38,25 +38,5 @@ Route::get('{page}',
             ['as'   => 'page.show',
              'uses' => 'PageController@show']);
 
-Route::get('page/create',
-            ['as'   => 'page.create',
-             'uses' => 'PageController@create']);
-
-Route::post('page',
-            ['as'   => 'page.store',
-             'uses' => 'PageController@store']);
-
-Route::get('page/{page}/edit',
-            ['as'   => 'page.edit',
-             'uses' => 'PageController@edit']);
-
-Route::put('page/{page}',
-            ['as'   => 'page.update',
-             'uses' => 'PageController@update']);
-
-Route::patch('page/{page}',
-            ['uses' => 'PageController@update']);
-
-Route::delete('page/{page}',
-            ['as'   => 'page.destroy',
-             'uses' => 'PageController@update']);
+Route::resource('pages', 'PageController', [
+                'except' => [ 'show' ] ]);
