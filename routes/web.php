@@ -22,7 +22,7 @@ Route::get('/',
 
 Route::resource('articles', 'ArticleController');
 Route::resource('projects', 'ProjectController');
-Route::resource('skill', 'SkillController');
+Route::resource('skills', 'SkillController');
 
 
 // Contact Page
@@ -35,7 +35,7 @@ Route::get('contact',
 // Generic Pages
 
 Route::get('{page}',
-            ['as'   => 'page.show',
+            ['as'   => 'page',
              'uses' => 'PageController@show']);
 
 Route::resource('pages', 'PageController', [
