@@ -1,5 +1,35 @@
 <?php
 
+
+/**
+ * Uses http://hivelogic.com/enkoder
+ *
+ * @return string - returns my name as a link to my email (enocoded to prevent spam)
+ */
+function name_with_email() { ?>
+
+            <script type="text/javascript">
+                //<![CDATA[
+                <!--
+                    var x="function f(x){var i,o=\"\",l=x.length;for(i=l-1;i>=0;i--) {try{o+=x.c" +
+                    "harAt(i);}catch(e){}}return o;}f(\")\\\"function f(x,y){var i,o=\\\"\\\\\\\""+
+                    "\\\\,l=x.length;for(i=0;i<l;i++){if(i==69)y+=i;y%=127;o+=String.fromCharCod" +
+                    "e(x.charCodeAt(i)^(y++));}return o;}f(\\\"\\\\!)$=$/%8c9=9%7?:}tk9y2)9;c\\\\"+
+                    "\\\\003B\\\\\\\\014\\\\\\\\003\\\\\\\\n\\\\\\\\010\\\\\\\\021\\\\\\\\t]\\\\" +
+                    "\\\\000\\\\\\\\013\\\\\\\\030\\\\\\\\n\\\\\\\\010\\\\\\\\001\\\\\\\\013\\\\" +
+                    "\\\\026\\\\\\\\031\\\\\\\\030\\\\\\\\0333\\\\\\\\023\\\\\\\\030\\\\\\\\027\\"+
+                    "\\\\\\036\\\\\\\\024W\\\\\\\\031\\\\\\\\024\\\\\\\\021!\\\\\\\\\\\\\\\\ ukw" +
+                    "h`;[*U(n\\\\\\\\0313!;92w\\\\\\\\032+;?08'\\\\\\\\177)(+_K\\\\\\\\004XEARZP" +
+                    "\\\"\\\\,69)\\\"(f};)lo,0(rtsbus.o nruter};)i(tArahc.x=+o{)--i;0=>i;1-l=i(r" +
+                    "of}}{)e(hctac};l=+l;x=+x{yrt{)93=!)31/l(tAedoCrahc.x(elihw;lo=l,htgnel.x=lo" +
+                    ",\\\"\\\"=o,i rav{)x(f noitcnuf\")"                                          ;
+                    while(x=eval(x));
+                //-->
+                //]]>
+            </script>
+<?php }
+
+
 /**
  * Uses http://hivelogic.com/enkoder
  *
