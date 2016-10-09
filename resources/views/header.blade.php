@@ -6,3 +6,15 @@
             @include('navigation.main')
         </nav>
     </header>
+    <script type="text/javascript">
+        jQuery( function ($) { // Sticky Header:
+            $( window ).scroll( function() {
+                var header = $( "body > header, body" );
+                if($(this).scrollTop() > 10) {
+                    header.addClass( "sticky" );
+                } else {
+                    header.removeClass( "sticky" );
+                }
+            });
+        });
+    </script>
