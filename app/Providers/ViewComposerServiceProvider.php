@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use App\Project;
+use App\Skill;
 
 class ViewComposerServiceProvider extends ServiceProvider
 {
@@ -41,7 +42,7 @@ class ViewComposerServiceProvider extends ServiceProvider
 
         view()->composer('navigation.skills', function($view)
         {
-            $view->with('featured_skills', Project::featured_skills());
+            $view->with('featured_skills', Skill::featured_skills());
         });
 
     }
