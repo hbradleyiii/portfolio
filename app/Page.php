@@ -12,6 +12,10 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Page extends Model {
 
-    protected $guarded = [];
+    protected $fillable = ['title', 'slug', 'body', 'published'];
+
+    public function getRouteKeyName() {
+        return 'slug';
+    }
 
 }
