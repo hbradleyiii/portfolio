@@ -17,6 +17,10 @@ Route::get('/',
             ['as'   => 'home',
              'uses' => 'HomeController@index']);
 
+Route::get('/admin',
+            ['as'   => 'admin',
+             'uses' => 'HomeController@admin']);
+
 
 // General Resources
 
