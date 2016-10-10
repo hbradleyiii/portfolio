@@ -50,8 +50,8 @@ class Project extends Model {
      * Returns all featured projects (development or websites)
      */
     static public function featured_projects() {
-        return Project::where('featured_development', '=', '1')->get()
-                      ->orWhere('featured_websites', '=', '1')->get()
+        return Project::where('featured_development', '=', '1')
+                      ->orWhere('featured_website', '=', '1')
                       ->get();
     }
 
