@@ -16,9 +16,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $projects = Project::where('published_at', '<=', Carbon::now())
-            ->where('published', '=', '1')
-            ->orderBy('published_at', 'desc')
+        $projects = Project::where('published', '=', '1')
             ->paginate(config('app.posts_per_page'));
 
         return view('projects.index', compact('projects'));
