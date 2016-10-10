@@ -8,10 +8,10 @@
                 @foreach ($articles as $article)
                     <li class="list-group-item">
                         <div>
-                            <a href="{{ URL::route('article', $article->slug) }}">{{ $article->title }}</a>
+                            <a href="{{ URL::route('articles.edit', $article->slug) }}">{{ $article->title }}</a>
                         </div>
                         <div class="btn-group">
-                            <a href="{{ URL::route('article', $article->slug) }}" class="btn btn-sm btn-primary">View</a>
+                            <a href="{{ URL::route('articles.show', $article->slug) }}" class="btn btn-sm btn-primary">View</a>
                             <a href="{{ URL::route('articles.edit', $article->slug) }}" class="btn btn-sm btn-primary">Edit</a>
                         </div>
                         {{ Form::open(['method' => 'DELETE', 'route' => ['articles.destroy', $article->slug]]) }}
