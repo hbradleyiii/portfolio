@@ -15,11 +15,9 @@
                     </label>
                 </div>
 
-                <div class="form-group checkbox">
-                    <label>
-                        {!! Form::label('published_at', 'Publication Date:') !!}
-                        {!! Form::date('published_at', \Carbon\Carbon::now()) !!}
-                    </label>
+                <div class="form-group">
+                    {!! Form::label('published_at', 'Publication Date:') !!}
+                    {!! Form::date('published_at', null, array('class' => 'form-control')) !!}
                 </div>
 
                 <div class="form-group">
