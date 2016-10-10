@@ -19,7 +19,7 @@ class Articles extends Migration
             $table->string('title')->unique();
             $table->text('body');
             $table->boolean('published')->default(false);
-            $table->date('published_at');
+            $table->date('published_at')->default(\Carbon\Carbon::now());
             $table->timestamps();
         });
     }
