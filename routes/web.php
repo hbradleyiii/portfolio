@@ -20,9 +20,23 @@ Route::get('/',
 
 // General Resources
 
+// Note: use {resource}/admin to list all in admin dashboard
+//       {resource}/ is tied to index for public view
+
+Route::get('articles/admin',
+            ['as'   => 'articles.admin',
+             'uses' => 'ArticleController@admin']);
 Route::resource('articles', 'ArticleController');
+
 Route::resource('projects', 'ProjectController');
+Route::get('projects/admin',
+            ['as'   => 'projects.admin',
+             'uses' => 'ProjectController@admin']);
+
 Route::resource('skills', 'SkillController');
+Route::get('skills/admin',
+            ['as'   => 'skills.admin',
+             'uses' => 'SkillController@admin']);
 
 
 // Contact Page
@@ -36,6 +50,9 @@ Route::get('contact',
 
 Route::resource('pages', 'PageController', [
                 'except' => [ 'show' ] ]);
+Route::get('pages/admin',
+            ['as'   => 'pages.admin',
+             'uses' => 'PageController@admin']);
 
 Route::get('{page}',
             ['as'   => 'page',
