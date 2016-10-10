@@ -10,8 +10,6 @@ use Illuminate\Database\Eloquent\Model;
  * @author - Harold Bradley III
  * @date - Oct 8, 2016
  */
-class Article extends Model {
-
-    protected $guarded = [];
+class Article extends Page {
 
 }
