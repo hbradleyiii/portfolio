@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Project;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -18,6 +19,6 @@ class Skill extends Model {
      * Returns all projects that use this skill
      */
     public function projects() {
-        return $this->belongsToMany(Projects::class);
+        return $this->belongsToMany(Project::class);
     }
 }
