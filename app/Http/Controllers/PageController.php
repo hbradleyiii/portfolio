@@ -10,14 +10,24 @@ use Illuminate\Http\Request;
 class PageController extends Controller
 {
     /**
-     * Display a listing of the pages.
+     * Redirect to listing for administration
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
+        return redirect()->route('pages.admin');
+    }
+
+    /**
+     * Display a listing of the pages for administration.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function admin()
+    {
         $pages = Page::all();
-        return view('pages.index', compact('pages'));
+        return view('pages.admin', compact('pages'));
     }
 
     /**

@@ -11,20 +11,6 @@ use Carbon\Carbon;
 
 class ArticleController extends Controller
 {
-    /**
-     * Display a listing of published articles
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function published()
-    {
-        $articles = Article::where('published_at', '<=', Carbon::now())
-            ->orderBy('published_at', 'desc')
-            ->paginate(config('app.posts_per_page'));
-        return $articles;
-
-        return view('article', compact('articles'));
-    }
 
     /**
      * Display a listing of the articles.
@@ -33,8 +19,23 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $articles = Article::all();
+        $articles = Article::where('published_at', '<=', Carbon::now())
+            ->where('published', '=', '1')
+            ->orderBy('published_at', 'desc')
+            ->paginate(config('app.posts_per_page'));
+
         return view('articles.index', compact('articles'));
+    }
+
+    /**
+     * Display a listing of the articles for administration.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function admin()
+    {
+        $articles = Article::all();
+        return view('articles.admin', compact('articles'));
     }
 
     /**

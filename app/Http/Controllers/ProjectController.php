@@ -16,8 +16,23 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $projects = Project::all();
+        $projects = Project::where('published_at', '<=', Carbon::now())
+            ->where('published', '=', '1')
+            ->orderBy('published_at', 'desc')
+            ->paginate(config('app.posts_per_page'));
+
         return view('projects.index', compact('projects'));
+    }
+
+    /**
+     * Display a listing of the projects for administration.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function admin()
+    {
+        $projects = Project::all();
+        return view('projects.admin', compact('projects'));
     }
 
     /**
