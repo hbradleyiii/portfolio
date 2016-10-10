@@ -59,7 +59,9 @@ class ArticleController extends Controller
         $article->title = $request->get('title');
         $article->slug = $request->get('slug');
         $article->body = $request->get('body');
-        $article->published_at = $request->get('published_at');
+        if ( $request->get('published_at') !== "" ) {
+            $article->published_at = $request->get('published_at');
+        }
         $article->published = null !== $request->get('published') ? true : false;
 
         $article->save();
