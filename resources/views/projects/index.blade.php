@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.main')
 
 @section('content')
     <div class="row">
@@ -11,13 +11,6 @@
                     </li>
                 @endforeach
             </ul>
-        </div>
-        <hr>
-        <div class="col-md-6 col-md-offset-3">
-            <h1>Create a new project</h1>
-            {!! Form::open([ 'method' => 'POST', 'route' => ['projects.store'] ]) !!}
-                @include('projects.form')
-            {!! Form::close() !!}
         </div>
     </div>
 @stop

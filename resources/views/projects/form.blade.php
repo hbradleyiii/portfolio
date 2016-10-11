@@ -40,5 +40,5 @@
                 </div>
 
                 <div class="form-group">
-                    <input type="submit" value="{{ isset( $submit_button_text ) ? $submit_button_text : 'Create Page' }}" class="btn btn-primary">
+                    <input type="submit" value="{{ isset( $submit_button_text ) ? $submit_button_text : 'Create Project' }}" class="btn btn-primary">
                 </div>
