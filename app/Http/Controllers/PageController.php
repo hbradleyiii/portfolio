@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use App\Page;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 
 class PageController extends Controller
@@ -77,7 +78,7 @@ class PageController extends Controller
      */
     public function show(Page $page)
     {
-        if ( ! $page->published ) {
+        if ( ! Auth::check() && ! $page->published ) {
             \App::abort(404, 'Page not found');
         }
 
