@@ -32,15 +32,15 @@ Route::get('articles/admin',
              'uses' => 'ArticleController@admin']);
 Route::resource('articles', 'ArticleController');
 
-Route::resource('projects', 'ProjectController');
 Route::get('projects/admin',
             ['as'   => 'projects.admin',
              'uses' => 'ProjectController@admin']);
+Route::resource('projects', 'ProjectController');
 
-Route::resource('skills', 'SkillController');
 Route::get('skills/admin',
             ['as'   => 'skills.admin',
              'uses' => 'SkillController@admin']);
+Route::resource('skills', 'SkillController');
 
 
 // Contact Page
@@ -62,11 +62,11 @@ Route::post('logout',  'Auth\\LoginController@logout');
 
 // Generic Pages
 
-Route::resource('pages', 'PageController', [
-                'except' => [ 'show' ] ]);
 Route::get('pages/admin',
             ['as'   => 'pages.admin',
              'uses' => 'PageController@admin']);
+Route::resource('pages', 'PageController', [
+                'except' => [ 'show' ] ]);
 
 Route::get('{page}',
             ['as'   => 'page',
