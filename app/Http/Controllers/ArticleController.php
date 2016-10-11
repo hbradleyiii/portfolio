@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Article;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 
 class ArticleController extends Controller
@@ -86,7 +87,7 @@ class ArticleController extends Controller
      */
     public function show(Article $article)
     {
-        if ( ! $article->published ) {
+        if ( ! Auth::check() && ! $page->published ) {
             \App::abort(404, 'Article not found');
         }
 
