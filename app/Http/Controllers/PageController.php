@@ -10,6 +10,17 @@ use Illuminate\Http\Request;
 class PageController extends Controller
 {
     /**
+     * PageController constructo
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth', array('except' => array('show')));
+    }
+
+
+    /**
      * Redirect to listing for administration
      *
      * @return \Illuminate\Http\Response
