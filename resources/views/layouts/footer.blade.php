@@ -1,11 +1,11 @@
     <footer>
-    @if(isset($featured_projects))
+    @if(count($featured_projects) > 0)
         <section class="work">
             <h2>Work</h2>
             @include('navigation.work')
         </section>
     @endif
-    @if(isset($featured_skills))
+    @if(count($featured_skills) > 0)
         <section class="skills">
             <h2>Skills</h2>
             @include('navigation.skills')
