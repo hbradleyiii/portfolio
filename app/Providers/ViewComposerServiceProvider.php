@@ -45,5 +45,10 @@ class ViewComposerServiceProvider extends ServiceProvider
             $view->with('featured_skills', Skill::featured_skills());
         });
 
+        view()->composer('layouts.footer', function($view)
+        {
+            $view->with('featured_projects', Project::featured_projects());
+            $view->with('featured_skills', Skill::featured_skills());
+        });
     }
 }
