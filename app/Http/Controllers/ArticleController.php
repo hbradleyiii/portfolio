@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
 class ArticleController extends Controller
 {
     /**
-     * PageController constructo
+     * PageController constructor
      *
      * @return void
      */
@@ -47,7 +47,7 @@ class ArticleController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a new article.
      *
      * @return \Illuminate\Http\Response
      */
@@ -104,7 +104,7 @@ class ArticleController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified article in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id

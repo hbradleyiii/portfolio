@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class PageController extends Controller
 {
     /**
-     * PageController constructo
+     * PageController constructor
      *
      * @return void
      */
@@ -96,7 +96,7 @@ class PageController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified page in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
