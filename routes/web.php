@@ -54,9 +54,10 @@ Route::get('login',
             ['as'   => 'login',
              'uses' => 'Auth\\LoginController@showLoginForm']);
 Route::post('login',   'Auth\\LoginController@login');
-Route::post('logout',
+Route::get('logout',
             ['as'   => 'logout',
              'uses' => 'Auth\\LoginController@logout']);
+Route::post('logout',  'Auth\\LoginController@logout');
 
 
 // Generic Pages
