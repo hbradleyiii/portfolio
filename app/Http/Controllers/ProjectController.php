@@ -5,10 +5,21 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use App\Project;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 
 class ProjectController extends Controller
 {
+    /**
+     * ProjectController constructo
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth', array('except' => array('show', 'index')));
+    }
+
     /**
      * Display a listing of the projects.
      *
@@ -72,7 +83,7 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
-        if ( ! $project->published ) {
+        if ( ! Auth::check() && ! $page->published ) {
             \App::abort(404, 'Project not found');
         }
 
