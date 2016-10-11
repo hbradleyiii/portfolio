@@ -11,6 +11,15 @@ use Carbon\Carbon;
 
 class ArticleController extends Controller
 {
+    /**
+     * PageController constructo
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth', array('except' => array('show', 'index')));
+    }
 
     /**
      * Display a listing of the articles.
